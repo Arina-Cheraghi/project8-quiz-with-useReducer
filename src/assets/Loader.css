@@ -1,0 +1,41 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 40px;
+  aspect-ratio: 1.154;
+  display: grid;
+  background: conic-gradient(
+    from 149deg at top,
+    #0000,
+    #bf1e62 1deg 60deg,
+    #0000 61deg
+  );
+  animation: l14 2s infinite cubic-bezier(0.5, 500, 0.5, -500);
+  transform-origin: top;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  background: conic-gradient(
+    from 149deg at top,
+    #0000,
+    #ffa588 1deg 60deg,
+    #0000 61deg
+  );
+  transform-origin: inherit;
+  animation: inherit;
+}
+.loader:after {
+  background: conic-gradient(
+    from 149deg at top,
+    #0000,
+    #027b7f 1deg 60deg,
+    #0000 61deg
+  );
+  animation-timing-function: cubic-bezier(0.5, 800, 0.5, -800);
+}
+@keyframes l14 {
+  100% {
+    transform: rotate(0.2deg);
+  }
+}

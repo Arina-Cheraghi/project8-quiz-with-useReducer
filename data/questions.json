@@ -1,0 +1,125 @@
+{
+  "questions": [
+   {
+     "question": "JavaScript چیست؟",
+     "options": ["زبان برنامه‌نویسی", "فریم‌ورک", "سیستم‌عامل", "پایگاه داده"],
+     "correctAnswer": 0,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها یک نوع داده در JavaScript نیست؟",
+     "options": ["String", "Boolean", "Integer", "Undefined"],
+     "correctAnswer": 2,
+     "points": 20
+   },
+   {
+     "question": "کدام دستور برای اعلام یک متغیر جدید استفاده می‌شود؟",
+     "options": ["var", "let", "const", "همه موارد"],
+     "correctAnswer": 3,
+     "points": 10
+   },
+   {
+     "question": "React چیست؟",
+     "options": ["زبان برنامه‌نویسی", "کتابخانه برای ساخت رابط کاربری", "فریم‌ورک", "پایگاه داده"],
+     "correctAnswer": 1,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها یک lifecycle method در React است؟",
+     "options": ["componentDidMount", "renderComponent", "initComponent", "startComponent"],
+     "correctAnswer": 0,
+     "points": 30
+   },
+   {
+     "question": "کدام یک از اینها برای مدیریت state در React استفاده می‌شود؟",
+     "options": ["useState", "useEffect", "useContext", "همه موارد"],
+     "correctAnswer": 3,
+     "points": 20
+   },
+   {
+     "question": "چگونه می‌توان یک تابع در JavaScript تعریف کرد؟",
+     "options": ["function myFunction()", "myFunction()", "def myFunction()", "create myFunction()"],
+     "correctAnswer": 0,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها یک خاصیت از props در React نیست؟",
+     "options": ["props.children", "props.name", "props.state", "props.value"],
+     "correctAnswer": 2,
+     "points": 20
+   },
+   {
+     "question": "کدام یک از اینها برای ایجاد یک کامپوننت جدید در React استفاده می‌شود؟",
+     "options": ["class MyComponent", "function MyComponent", "both", "none"],
+     "correctAnswer": 2,
+     "points": 30
+   },
+   {
+     "question": "کدام یک از اینها برای ایجاد یک آرایه در JavaScript استفاده می‌شود؟",
+     "options": ["[]", "()", "{}", "<>"],
+     "correctAnswer": 0,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها برای مدیریت side effects در React استفاده می‌شود؟",
+     "options": ["useState", "useEffect", "useReducer", "useContext"],
+     "correctAnswer": 1,
+     "points": 20
+   },
+   {
+     "question": "کدام یک از اینها یک روش برای حلقه زدن در آرایه‌ها در JavaScript نیست؟",
+     "options": ["forEach", "map", "filter", "loop"],
+     "correctAnswer": 3,
+     "points": 20
+   },
+   {
+     "question": "کدام یک از اینها یک ویژگی از JSX است؟",
+     "options": ["HTML-like syntax", "only JavaScript", "CSS only", "none"],
+     "correctAnswer": 0,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها برای ارسال props به یک کامپوننت در React استفاده می‌شود؟",
+     "options": ["<MyComponent propName={value} />", "<MyComponent propName=value />", "<MyComponent propName:value />", "<MyComponent propName(value) />"],
+     "correctAnswer": 0,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها برای بررسی نوع داده در JavaScript استفاده می‌شود؟",
+     "options": ["typeof", "instanceof", "dataType", "checkType"],
+     "correctAnswer": 0,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها برای جلوگیری از بارگذاری مجدد صفحه در JavaScript استفاده می‌شود؟",
+     "options": ["event.preventDefault()", "return false", "stopPropagation()", "none"],
+     "correctAnswer": 0,
+     "points": 20
+   },
+   {
+     "question": "کدام یک از اینها یک روش برای مدیریت رویدادها در React است؟",
+     "options": ["onClick", "onChange", "onSubmit", "همه موارد"],
+     "correctAnswer": 3,
+     "points": 10
+   },
+   {
+     "question": "کدام یک از اینها برای ایجاد یک کامپوننت تابعی در React استفاده می‌شود؟",
+     "options": ["function MyComponent() {}", "MyComponent() {}", "class MyComponent {}", "create MyComponent() {}"],
+     "correctAnswer": 0,
+     "points": 20
+   },
+   {
+     "question": "کدام یک از اینها برای بررسی برابری دو مقدار در JavaScript استفاده می‌شود؟",
+     "options": ["==", "===", "all of the above", "none"],
+     "correctAnswer": 2,
+     "points": 20
+   },
+   {
+     "question": "کدام یک از اینها برای استفاده از state در یک کامپوننت کلاسی در React استفاده می‌شود؟",
+     "options": ["this.state", "this.props", "state", "props"],
+     "correctAnswer": 0,
+     "points": 20
+   }
+  ]
+ }
+ 
