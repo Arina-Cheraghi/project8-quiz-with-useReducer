@@ -8,6 +8,7 @@ import StartScreen from './Components/StartScreen';
 import Questions from './Components/Questions';
 import NextButton from './Components/NextButton';
 import Progress from './Components/Progress';
+import FinishScreen from './Components/FinishScreen';
 
 function App() {
   const initialState = {
@@ -49,11 +50,16 @@ function App() {
         }
       }
       case "nextQuestion":
+        if (state.index + 1 >= state.questions.length) {
+          return { ...state, status: "finished" };
+        }
         return {
           ...state,
           index: state.index + 1,
           answer: null
-        }
+        };
+      case "finished":
+        return {...state, status: "finished"}
       default:
         throw new Error("action unknown")
     }
@@ -83,10 +89,11 @@ function App() {
           <>
             <Progress answer={answer} allPoints={allPoints} index={index} numQuestions={numQuestions} points={points} />
             <Questions dispatch={dispatch} answer={answer} question={questions[index]} />
-            <NextButton dispatch={dispatch} answer={answer} />
+            <NextButton dispatch={dispatch} index={index} numQuestions={numQuestions} answer={answer} />
           </>
         }
         {status === "error" && < Error />}
+        {status === "finished" && <FinishScreen points={points} allPoints={allPoints} />}
       </Main>
     </div>
   )
