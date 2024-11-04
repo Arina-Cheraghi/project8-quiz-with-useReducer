@@ -9,6 +9,7 @@ import Questions from './Components/Questions';
 import NextButton from './Components/NextButton';
 import Progress from './Components/Progress';
 import FinishScreen from './Components/FinishScreen';
+import Timer from './Components/Timer';
 
 function App() {
   const initialState = {
@@ -16,7 +17,8 @@ function App() {
     status: "loading",
     index: 0,
     answer: null,
-    points: 0
+    points: 0,
+    secondsRemaining: null
   }
 
   function reducer(state, action) {
@@ -36,7 +38,8 @@ function App() {
       case "start": {
         return {
           ...state,
-          status: 'active'
+          status: 'active',
+          secondsRemaining: state.questions.length * 30
         }
       }
       case "newAnswer": {
@@ -59,18 +62,22 @@ function App() {
           answer: null
         };
       case "finished":
-        return {...state, status: "finished"}
+        return { ...state, status: "finished" }
+      case "restart":
+        return { ...initialState, questions: state.questions, status: "ready" }
+      case "tick":
+        return {
+          ...state, secondsRemaining: state.secondsRemaining - 1,
+          status: state.secondsRemaining === 0 ? "finished" : state.status,
+        }
       default:
         throw new Error("action unknown")
     }
   }
 
-  const [{ questions, status, index, answer, points }, dispatch] = useReducer(reducer, initialState);
-  const numQuestions = questions.length;
-  const allPoints = questions.reduce(
-    (prev, cur) => prev + cur.points,
-    0
-  )
+  const [{ questions, status, index, answer, points, secondsRemaining }, dispatch] = useReducer(reducer, initialState);
+  const numQuestions = questions ? questions.length : 0;
+  const allPoints = questions ? questions.reduce((prev, cur) => prev + cur.points, 0) : 0;
 
   useEffect(() => {
     fetch("http://localhost:8000/questions")
@@ -89,11 +96,14 @@ function App() {
           <>
             <Progress answer={answer} allPoints={allPoints} index={index} numQuestions={numQuestions} points={points} />
             <Questions dispatch={dispatch} answer={answer} question={questions[index]} />
-            <NextButton dispatch={dispatch} index={index} numQuestions={numQuestions} answer={answer} />
+            <footer className='flex w-2/6 justify-between'>
+              <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
+              <NextButton dispatch={dispatch} index={index} numQuestions={numQuestions} answer={answer} />
+            </footer>
           </>
         }
         {status === "error" && < Error />}
-        {status === "finished" && <FinishScreen points={points} allPoints={allPoints} />}
+        {status === "finished" && <FinishScreen points={points} allPoints={allPoints} dispatch={dispatch} />}
       </Main>
     </div>
   )
